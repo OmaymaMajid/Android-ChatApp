@@ -160,8 +160,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void CreateNewGroup(final String groupName) {
-        String currentUserID = mAuth.getCurrentUser().getUid();
-        RootRef.child("Users").child(currentUserID).child("Groups").child(groupName).setValue("").addOnCompleteListener(new OnCompleteListener<Void>() {
+
+        RootRef.child("Groups").child(groupName).setValue("").addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
